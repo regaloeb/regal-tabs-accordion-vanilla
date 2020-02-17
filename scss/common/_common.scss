@@ -40,9 +40,29 @@ h1, h2, h3, h4{
 	font-family: $specialFont;
 }
 
-h1,
+h1{
+	font-size: 3rem;
+	@media (min-width: $mobile-phone){
+		font-size: 5rem;
+	}
+}
 h2{
 	text-transform: uppercase;
+}
+
+.picto-link{
+	color: $blue;
+	text-decoration: none;
+	
+	.picto{
+		path{
+			fill: $blue;
+		}
+	}
+	
+	&:hover{
+		text-decoration: underline;
+	}
 }
 
 p{
@@ -80,10 +100,10 @@ a{
 .page-content{
 	transition: transform $speed2 $defaultEase;
 	position: relative;
-	padding: 0 1rem;
+	padding: 2rem 1rem 0 1rem;
 	
 	@media (min-width: 810px){
-		padding: 0;
+		padding: 3rem 0 0 0;
 	}
 	
 	&.mobile-nav-active{
