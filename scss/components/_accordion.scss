@@ -1,0 +1,16 @@
+.accordion{
+	list-style: none;
+	
+	.open-close{
+		cursor: pointer;
+	}
+	
+	.accordion-desc{
+		overflow: hidden;
+		transition: max-height $speed2 $defaultEase;
+	}
+	
+	.desc-cont{
+		overflow: auto;
+	}
+}

@@ -1,0 +1,113 @@
+.tabs{
+	display: block;
+
+	.tabs-nav{
+		width: 100%;
+	
+		.tabs-nav-item{
+			display: block;
+			
+			&.active{
+				text-decoration: none;
+				cursor: default;
+			}
+		}
+	}
+	
+	.tabs-cont{
+		position: relative;
+		transition: min-height $speed2 $defaultEase;
+		
+		.tab{
+			position: absolute;
+			left: -10000px;
+			top: -10000px;
+			opacity: 0;
+			transition: opacity $speed2 $defaultEase;
+			
+			&.active{
+				left: 0;
+				top: 0;
+				opacity: 1;
+			}
+		}
+			
+	}
+	
+	@media (min-width: $mobile-phone){
+		&.vertical{
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			
+			.tabs-nav{
+				width: 20%;
+				display: block;
+				
+				.tabs-nav-item{
+					display: block;
+				}
+			}
+			
+			.tabs-cont{
+				flex-grow: 1;
+			}
+		}
+			
+		&.horizontal{
+			display: block;
+			
+			.tabs-nav{
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}
+
+.tabs.tabs-accordion{
+	.tabs-cont{
+		.open-close{
+			position: absolute;
+			left: -10000px;
+			top: -10000px;
+		}
+	}
+		
+	@media (max-width: $mobile-phone){
+		.tabs-nav{
+			display: none;
+		}
+		
+		.tabs-cont{
+			position: relative;
+			
+			.tab{
+				position: static;
+				left: 0;
+				top: 0;
+				opacity: 1;
+			}
+			
+			.open-close{
+				cursor: pointer;
+				position: relative;
+				left: 0;
+				top: 0;
+			}
+			
+			.accordion-desc{
+				overflow: hidden;
+				transition: max-height $speed2 $defaultEase;
+			}
+			
+			.desc-cont{
+				overflow: auto;
+			}
+		}
+	}
+}
+
