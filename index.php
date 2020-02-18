@@ -32,10 +32,10 @@
 			<div class="section-inner">
 				<h1>RegalTabs & RegalAccordion</h1>
 				<p>
-					Si on veut des onglets en mode desktop et des accordéons en mode mobile, la solution consiste à charger les deux constructeurs, à appliquer une structure HTML adéquate et à déclarer les objets en fonction du contexte mobile/desktop.<br>
-					Certes, c'est un peu tordu mais cela fonctionne admirablement&nbsp;!<br><br>
+					Si on veut des onglets en mode desktop et des accordéons en mode mobile, la solution consiste à charger les deux constructeurs <strong>Javascript Vanilla</strong> <a href="http://www.regaloeb.com/pages/regal-tabs-vanilla.js">RegalTab</a> et <a href="http://www.regaloeb.com/pages/regal-accordion-vanilla.js">RegalAccordion</a>, à appliquer une structure HTML adéquate et à déclarer les objets en fonction du contexte mobile/desktop.<br>
+					Certes, c'est un peu tordu mais cela fonctionne parfaitement&nbsp;!<br><br>
 					<a href="https://github.com/regaloeb/regal-tabs-accordion-vanilla" target="_blank" class="picto-link"><span class="picto"> <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-</span>Github repository</a>
+</span><span>Github repository</span></a>
 				</p>
 				<h2>HTML</h2>
 				<p>
@@ -43,12 +43,12 @@
 					Attribut <strong>data-active</strong> détermine l'onglet affiché par défaut&nbsp;: "0": le premier, "1": le deuxième, etc.<br>
 					Avec la classe <strong>.vertical</strong> la navigation Onglets sera placée à gauche des onglets, les liens les uns en dessous des autres..<br>
 					Avec la classe <strong>.horizontal</strong> la navigation Onglets sera placée au dessus des onglets, les liens les uns à côté des autres..<br>
-					Pour les mobiles, la navigation est toujours au dessus des onglets et les liens sont placés les uns sous les autres.
+					Pour les mobiles, la navigation est toujours au dessus des onglets et les liens sont placés les uns sous les autres.<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;Un enfant avec classe <strong>.tabs-nav</strong>.<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque enfant de ce bloc .tabs-nav est un lien vers un onglet et doit avoir la classe <strong>.tabs-nav-item</strong>.&nbsp;:<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;Un enfant avec classes <strong>.tabs-cont</strong> et <strong>.accordion-mobile</strong> qui va contenir les onglets et l'accordéon.<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque onglet doit avoir la classe <strong>.tab</strong>, contenir un enfant <strong>.open-close</strong> avec le même titre que celui de la nav-tab correspondante et qui va servir pour ouvrir/fermer l'accordéon.<br>
-					Le contenu de l'onglet (et de l'accordéon du coup) doit être placé dans un container <strong>.desc-cont</strong> lui-même contenu dans un <strong>.accordion-desc</strong>.
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaque onglet doit avoir la classe <strong>.tab</strong>, contenir un enfant <strong>.open-close</strong> (pour des raisons d'accessibilité, on choisira une balise titre <strong>&lt;hN></strong>) avec le même titre que celui de la nav-tab correspondante et qui va servir pour ouvrir/fermer l'accordéon.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le contenu de l'onglet (et de l'accordéon du coup) doit être placé dans un container <strong>.desc-cont</strong> lui-même contenu dans un <strong>.accordion-desc</strong>.
 					<div class="code">
 &lt;div class="tabs tabs-accordion vertical" data-active="0"><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav class="tabs-nav"><br>
@@ -79,13 +79,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br>
 &lt;/div><br>
 					</div>
-					L'attribut <strong>href</strong> des <strong>.tabs-nav-item</strong> doit contenir un lien vers l'onglet correspondant sous forme d'ancre. Il permet au javascript de retrouver l'onglet et aux utilisateurs non-javascript d'aller vers l'onglet directement.<br><br>
+					L'attribut <strong>href</strong> des <strong>.tabs-nav-item</strong> doit contenir un lien vers l'id de l'onglet correspondant sous forme d'ancre. Il permet au javascript de retrouver l'onglet correspondant et aux utilisateurs non-javascript d'aller vers l'onglet directement.<br><br>
 					Comme la navigation contenant les titres des onglets est dans un bloc séparé des onglets, pour des raisons d'accessibilité, on appliquera le style <strong>.open-close</strong> utilisé par l'accordéon à des des balise <strong>&lt;hN></strong> dans les onglets.
 				</p>
 				
 				<h2>CSS</h2>
 				<p>
-					La CSS de base contient tout ce qu'il faut pour Onglets et Accordéons.<br>
+					La CSS de base contient tout ce qu'il faut au niveau fonctionnel pour Onglets et Accordéons.<br>
 					Cependant, l'habillage graphique sera à ajouter pour chaque cas.<br>
 					SCSS: <a href="scss/components/_tabs.scss" download>scss/components/_tabs.scss</a>
 				</p>
@@ -150,11 +150,12 @@ if(tabsAccordion.length){<br>
 				</p>
 				<p>
 					<strong>NOTA IMPORTANTA&nbsp;:</strong><br>
-					Pour être totalement fonctionnel, il faut ajouter quelques POLYFILLS/fonctions avant la déclaration des objets&nbsp;:<br>
+					Il faut ajouter quelques POLYFILLS/fonctions avant la déclaration des objets&nbsp;:<br>
 					- forEach pour HTMLCollection;<br>
 					- triggerevent;<br>
 					- resizeEnd.<br>
 					Et déclarer quelques variables&nbsp;: windowHeight, windowWidth, mobileLimit, desktopLimit et isMobileContext.<br>
+					Généralement, j'ai tout un tas de petites fonctions/variables de ce gfenre déclarées dans un fichier general.js et qui me sont indispensables, j'en parlerai sans un autre article.
 					<span class="code">
 //forEach NodeList & HTMLCollection polyfill<br>
 NodeList.prototype.forEach||(NodeList.prototype.forEach=Array.prototype.forEach);<br>
