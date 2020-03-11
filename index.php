@@ -161,13 +161,13 @@ if(tabsAccordion.length){
 					<h2>Démo</h2>
 					<div class="tabs tabs-accordion horizontal" data-active="1"> <!-- class horizontal/vertical, data-default=indice onglet actif par défaut -->
 						<nav class="tabs-nav">
-							<a href="#tab1" class="tabs-nav-item">
+							<a href="#tab1" class="tabs-nav-item" id="tab1-nav">
 								<span>Onglet 1</span>
 							</a>
-							<a href="#tab2" class="tabs-nav-item">
+							<a href="#tab2" class="tabs-nav-item" id="tab2-nav">
 								<span>Onglet 2</span>
 							</a>
-							<a href="#tab3" class="tabs-nav-item">
+							<a href="#tab3" class="tabs-nav-item" id="tab3-nav">
 								<span>Onglet 3</span>
 							</a>
 						</nav>

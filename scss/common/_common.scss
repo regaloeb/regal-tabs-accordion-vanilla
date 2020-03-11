@@ -209,23 +209,6 @@ a{
 	display: none;
 }
 
-.tabs.tabs-accordion{
-	@media (max-width: $mobile-phone){
-		.tabs-nav{
-			display: none;
-		}
-		
-		.tabs-cont{
-			.tab{
-				position: static;
-				left: 0;
-				top: 0;
-				opacity: 1;
-			}
-		}
-	}
-}
-
 .js-reveal{
 	transform: translateX(-3rem);
 	transform-origin: 0 0;
